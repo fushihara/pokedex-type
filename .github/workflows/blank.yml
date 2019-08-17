@@ -16,7 +16,7 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: 10.x 
-    - run: A = `cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].author.email'`
+    - run: cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].author.email'
     - run: echo ${A}
     - run: git config --global user.email "${GITHUB_ACTOR}@example.com"
     - run: git config --global user.name "Your Name"

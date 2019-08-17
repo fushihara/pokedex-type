@@ -16,6 +16,9 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: 10.x 
+    - run: cat ${GITHUB_EVENT_PATH}
+    - run: git config --global user.email "${GITHUB_ACTOR}@example.com"
+    - run: git config --global user.name "Your Name"
     - run: npm install && npm run build && npx gh-pages -d dist
     #- run: npm install && npm run build && mkdir ../dist/ && cp -r ./dist/ ../dist/ && git checkout -b gh-pages origin/gh-pages && git clean -fd && echo AAAA && ls -lav && echo BBBB && ls -lav ../dist/dist/
     #- run: mkdir ../gh-pages/ && cd ../gh-pages/ && git clone git@github.com:${GITHUB_REPOSITORY}

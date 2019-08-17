@@ -19,3 +19,5 @@ jobs:
     - run: npm install && npm run build && ls -lav
     - run: pwd
     - run: df -h
+    - run: git config --list
+    

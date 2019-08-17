@@ -23,7 +23,7 @@ jobs:
     - run: git remote -v	
     - run: git branch -a
     - run: git log --graph --oneline --all -30
-    - run: git pull master -v
+    - run: git pull origin master -v
     - run: git push master -v
     - run: git config --list && 
     - run: A=$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].author.email') && git config --global user.email "${A}" && echo email is ${A}

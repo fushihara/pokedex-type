@@ -16,8 +16,7 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: 10.x 
-    - run: A=$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].author.email')
-    - run: echo ${A}
+    - run: A=$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].author.email') && echo ${A}
     - run: git config --global user.email "${GITHUB_ACTOR}@example.com"
     - run: git config --global user.name "Your Name"
     - run: npm install && npm run build && npx gh-pages -d dist

@@ -16,9 +16,5 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: 10.x 
-    - run: npm install && npm run build && mkdir ../dist/ && cp -r ./dist/ ../dist/ && ls -lav ..
-    - run: pwd
-    - run: df -h
-    - run: git config --list
+    - run: npm install && npm run build && mkdir ../dist/ && cp -r ./dist/ ../dist/ && ls -lav ../dist/
     - run: mkdir ../gh-pages/ && cd ../gh-pages/ && git clone git@github.com:${GITHUB_REPOSITORY}
-    - run: cwd

@@ -20,4 +20,5 @@ jobs:
     - run: pwd
     - run: df -h
     - run: git config --list
-    
+    - run: mkdir ../gh-pages/ && cd ../gh-pages/ && git clone git@github.com:${GITHUB_REPOSITORY}
+    - run: cwd

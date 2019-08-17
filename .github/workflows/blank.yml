@@ -16,7 +16,7 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: 10.x 
-    - run: npm install && npm run build && ls -lav
+    - run: npm install && npm run build && cp ./dist .. && ls -lav ..
     - run: pwd
     - run: df -h
     - run: git config --list

@@ -82,6 +82,7 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+      config.devtool = 'eval-source-map'
     },
     loaders: {
       imgUrl: { limit: 5000 }

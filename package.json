@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-single-page-app-2",
+  "version": "1.0.0",
+  "description": "My majestic Nuxt.js project",
+  "author": "Fushihara",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxt/typescript": "^2.8.1",
+    "@nuxtjs/vuetify": "^1.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.2.0",
+    "ts-node": "^8.3.0"
+  }
+}

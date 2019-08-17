@@ -24,9 +24,9 @@ jobs:
     - run: git branch -a
     - run: git log --graph --oneline --all -30
     - run: git pull origin master -v
-    - run: git log --graph --oneline --all -30
+    #- run: git log --graph --oneline --all -30
     #- run: git push master -v
-    - run: git config --list && 
+    - run: git config --list
     - run: A=$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].author.email') && git config --global user.email "${A}" && echo email is ${A}
     - run: A=$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].author.name')  && git config --global user.name "${A}" && echo name is ${A}
     - run: npm install && npm run build && npx gh-pages -d dist

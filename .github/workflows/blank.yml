@@ -16,21 +16,21 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: 10.x 
-    - run: echo ${GITHUB_TOKEN:0:10}  && git remote set-url origin https://${TEST_TOKEN}@github.com/${GITHUB_REPOSITORY} && git remote -v	
+    - run: git remote set-url origin https://${TEST_TOKEN}@github.com/${GITHUB_REPOSITORY}
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
-    - run: git checkout master     
-    - run: git status
-    - run: git remote -v	
-    - run: git branch -a
-    - run: git log --graph --oneline --all -30
-    - run: git pull origin master -v
-    - run: git log --graph --oneline --all -30
-    - run: git push -v
-    - run: git config --list
+    #- run: git checkout master     
+    #- run: git status
+    #- run: git remote -v	
+    #- run: git branch -a
+    #- run: git log --graph --oneline --all -30
+    #- run: git pull origin master -v
+    #- run: git log --graph --oneline --all -30
+    #- run: git push -v
+    #- run: git checkout -b gh-pages origin/gh-pages
+    #- run: git config --list
     - run: A=$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].author.email') && git config --global user.email "${A}" && echo email is ${A}
     - run: A=$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].author.name')  && git config --global user.name "${A}" && echo name is ${A}
-    - run: npm install && npm run build && npx gh-pages -d dist git log --graph --oneline --all -30
+    - run: npm install && npm run build && npx gh-pages -d dist -t
     #- run: npm install && npm run build && mkdir ../dist/ && cp -r ./dist/ ../dist/ && git checkout -b gh-pages origin/gh-pages && git clean -fd && echo AAAA && ls -lav && echo BBBB && ls -lav ../dist/dist/
     #- run: mkdir ../gh-pages/ && cd ../gh-pages/ && git clone git@github.com:${GITHUB_REPOSITORY}

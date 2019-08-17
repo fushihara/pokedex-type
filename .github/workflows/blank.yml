@@ -19,6 +19,7 @@ jobs:
     - run: echo ${GITHUB_TOKEN:0:10}  && git remote set-url origin https://${TEST_TOKEN}@github.com/${GITHUB_REPOSITORY} && git remote -v	
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
     - run: git checkout master     
     - run: git status
     - run: git remote -v	

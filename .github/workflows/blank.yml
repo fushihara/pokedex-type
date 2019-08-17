@@ -16,6 +16,7 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: 10.x 
+    - run: git status
     - run: git push -v
     - run: git remote -v	
     - run: git config --list && git branch -a

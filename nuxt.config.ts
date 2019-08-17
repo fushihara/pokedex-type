@@ -1,6 +1,10 @@
 import colors from 'vuetify/es5/util/colors'
-
+const routerBase = process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.replace(/^.+?\//,"")}/` : "";
+console.log(`route base is ${routerBase}`);
 export default {
+  router: {
+    base: process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.replace(/^.+?\//,"")}/` : ""
+  },
   generate: {
     fallback: true, // デフォルトの '200.html' の代わりに '404.html' を使用したい場合
   },
